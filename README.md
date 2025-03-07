@@ -9,7 +9,10 @@ This project provides a seamless experience for users to search, book, and manag
 - **Essential Filters**: Room type, guest capacity, price range, etc.  
 - **Optional Filters**: Amenities, comfort level, and more.  
 - **Search Results Page**: Displays available rooms with sorting options.  
-- **Detailed Room Page**: Provides room descriptions, images.  
+- **Detailed Room Page**: Provides room descriptions, images.
+<img width="2048" alt="Screenshot 2025-03-07 at 17 38 12" src="https://github.com/user-attachments/assets/2af37b40-ae9e-46c7-a840-05f059469673" />
+
+  
 
 ### 📅 Booking Management  
 - **Book a Room**: Users can make reservations.  
