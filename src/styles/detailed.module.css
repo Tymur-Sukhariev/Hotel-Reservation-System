@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.allContainer{
+    max-width: 1500px;
+    margin: 0 auto;
+    margin-bottom: 200px;
+}
+
+.allContainer>p{
+    width: 73%;
+    margin-top: 40px;
+    font-size: 18px;
+    letter-spacing: 10%;
+    color: #4B4B4B;
+    font-family: "Inter", sans-serif;
+}
+
+.allContainer>h1{
+    letter-spacing: 14%;
+    font-size: 34px;
+    color: #948D72;
+    margin: 30px 0;
+}
+
+.main{
+    display: flex;
+    justify-content: space-between;
+}
+
+.main>div:nth-child(1){
+    width: 73%;
+}
+.main>div:nth-child(2){
+    width: 25%;
+}
+
+.bigImg{
+    overflow: hidden;
+    width: 100%;
+    height: 450px;
+}
+
+.bigImg img{
+    width: 100%; 
+    height: 100%;
+    object-fit: cover; 
+    object-position: center; 
+    border-radius: 8px;
+}
+
+.smallImgContainer{
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.eachSmallContainer{
+    width: 32.5%;
+    overflow: hidden;
+    height: 170px;
+    border-radius: 8px;
+}
+
+.smallImgContainer img{
+    width: 100%;
+    object-fit: cover; 
+    object-position: center; 
+}
+
+.allFacilities{
+    height: 450px;
+    border-radius: 8px;
+    padding: 16px 20px 0;
+    -webkit-box-shadow: 0px 2px 24px 1px rgba(0,0,0,0.25);
+    -moz-box-shadow: 0px 2px 24px 1px rgba(0,0,0,0.25);
+    box-shadow: 0px 2px 24px 1px rgba(0,0,0,0.25);  
+}
+
+.allFacilities h1{
+    font-size: 32px;
+    text-align: center;
+    color: #948D72;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 14%;
+    margin-bottom: 7px;
+}
+
+.allFacilities p{
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.allFacilities img{
+    width: 19px;
+    height: 19px;
+}
+
+.bookContainer{
+    height: 170px;
+    margin-top: 10px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bookContainer h1{
+    font-size: 32px;
+    color: #948D72;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 14%;
+    margin-bottom: 45px;
+    font-weight: 500;
+}
+
+
+.bookContainer button{
+    width: 100%;
+    height: 46px;
+    color: white;
+    background: #555353;
+    border-radius: 8px;
+    position: absolute;
+    bottom: 0;
+}
+
+.bookContainer button:hover{
+    background: #6e6c6c;
+    transition: 0.2s;
+}

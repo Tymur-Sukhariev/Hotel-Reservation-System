@@ -1,0 +1,14 @@
+.facilityContainer p{
+    color: #7B7B7B;
+    font-size: 12px;
+    margin-top: 3px;
+}
+.facilityContainer{
+    display: flex;
+}
+.facilityContainer img{
+    margin-left: 4px;
+    width: 17px;
+    height: 17px;
+    margin-top: 3px;
+}

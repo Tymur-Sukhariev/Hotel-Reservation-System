@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+.bookingsContainer{
+    min-height: 100vh;
+    padding: 30px 8%;
+}
+
+.noBookings{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.noBookings h1{
+    font-size: 31px;
+    text-align: center;
+    color: #9f987b;
+}
+
+.noBookings p{
+    font-size: 20px;
+    text-align: center;
+    color: #646464;
+    margin-top: 10px;
+}
+
+.noBookings a{
+    color: white;
+    font-size: 20px;
+    text-align: center;
+    background: #72a37e;
+    width: 170px;
+    padding: 5px 0;
+    display: block;
+    margin: 20px auto;
+    border-radius: 8px;
+}
+
+.noBookings a:hover {
+    transition: 0.3s all;
+    background: #85b992;
+    width: 190px;
+    padding: 5px 0;
+}
+
+.bookingsContainer>h1{
+    font-size: 36px;
+    letter-spacing: 14%;
+    color: #9f987b;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+.bookItem{
+    display: flex;
+    margin-bottom: 30px;
+    box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.23);
+    border-radius: 12px;
+    padding: 10px;
+}
+
+.bookItem h1{
+    font-size: 24px;
+    color: #948D72;
+}
+
+.bookItem p,
+.bookItem time{
+    color: #646464;
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+
+
+.bookItem img{
+    border-radius: 8px;
+    width: 220px;
+    height: 220px;
+    object-fit: cover; 
+    object-position: center; 
+    margin-right: 20px;
+}
+
+.bookItem button{
+    color: #b85555;
+}
+
+.bookItem button:hover{
+    color: #FF6464;
+}
+
+.cancelWindow{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.cancelWindow>div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 150px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-sizing: border-box;
+    padding-top: 35px;
+}
+
+.cancelWindow p{
+    text-align: center;
+    margin: 0 auto;
+    width: 400px;
+    font-size: 20px;
+    font-family: 'inter', sans-serif;
+    color: #434343;
+}
+
+.btnContainer{
+    display: flex;
+    justify-content: space-between;
+    width: 180px;
+    margin: 20px auto;
+
+}
+
+.btnContainer button{
+    width: 80px;
+    height: 35px;
+    font-size: 22px;
+    border-radius: 8px;
+    background: #9e8d6f;
+    color: white;
+}
+
+.btnContainer button:hover{
+    background: #b8a482;
+    transition: 0.2s all;
+}
+
+

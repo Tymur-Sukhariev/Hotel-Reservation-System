@@ -1,0 +1,27 @@
+.container{
+    background: white;
+    height: 60px;
+    display: flex;
+    border-radius: 12px 0 0 12px;
+    overflow: hidden;
+    width: 364px;
+    padding-left: 25px;
+    box-sizing: border-box;
+}
+
+.container input, 
+.container input::placeholder{
+    font-size: 16px;
+    color: #686868;
+    outline: none;
+    caret-color: transparent;
+}
+
+.container input{
+    padding-right: 75px;
+}
+
+.container img{
+    cursor: pointer;
+}
+
