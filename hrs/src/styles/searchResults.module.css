@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.serachContainer{
+    padding-left: 8%;
+    /* max-width: 2000px; */
+    min-height: 100vh;
+    margin-bottom: 200px;
+}
+
+.serachContainer >h1{
+    font-size: 37px;
+    font-family: 'inter', sans-serif;
+    font-weight: 600;
+    color: #616161;
+    margin-top: 50px;
+}
+
+.roomsContainer{
+    width: 70%;
+    margin-top: 20px;
+}
+
+.filterContainer{
+    position: fixed;
+    box-shadow: 0px 2px 24px 1px rgba(0, 0, 0, 0.23);
+    border-radius: 12px;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 25%;
+    max-width: 400px;
+    top: 150px;
+    right: 8%;
+    color: #616161;
+    z-index: 3000;
+}
+
+.filterContainer h1{
+    font-size: 23px;
+    margin-bottom: 5px;
+}
+
+.filterContainer [type='text']{
+    width: 70px;
+    height: 28px;
+    border-radius: 50px;
+    border: 0.7px solid #616161;
+    outline: none;
+    text-align: center;
+}
+
+.filterContainer label{
+    margin-left: 10px;
+    font-size: 20px;
+    margin-bottom: 100px;
+}
+
+.filterContainer hr{
+    margin: 10px 0;
+}
+
+.optionsContainer div{
+    padding-bottom: 10px;
+}

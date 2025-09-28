@@ -1,0 +1,21 @@
+.item{
+    width: 271px;
+    background: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    height: 40px;
+    font-size: 16px;
+    color: #686868;
+    box-sizing: border-box;
+    padding: 3px 10px;
+    justify-content: space-between;
+    position: absolute;
+}
+
+.item select{
+   cursor: pointer;
+   border-radius: 6px;
+   padding: 3px 10px;
+   box-sizing: border-box;
+}
