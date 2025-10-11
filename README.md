@@ -9,10 +9,10 @@ A full-stack hotel booking platform with real-time room search, booking manageme
 
 Hero landing screen with a booking form for selecting stay dates and number of guests. Designed with a clean hotel-style layout and modern UX to make navigation intuitive for first-time users.
 
-
+---
 
 ### Filter Section  
-<img width="402" height="415" alt="calendar" src="https://github.com/user-attachments/assets/92c0b05f-2ebc-4715-8564-75f8789de962" />
+<img width="402" height="415" alt="calendar" src="https://github.com/user-attachments/assets/92c0b05f-2ebc-4715-8564-75f8789de962" /><br>
 <img width="742" height="236" alt="guests" src="https://github.com/user-attachments/assets/130099ba-b14d-41b6-bcd5-32c6bdea6b8f" />
 
 Booking filters where users choose check-in/check-out dates and specify the number of adults and children. The interface dynamically adjusts based on guest details and enables more accurate search results.
