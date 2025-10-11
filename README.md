@@ -106,12 +106,13 @@ A standard **80/20 train-test split** was used for evaluation, and model perform
 - React
 - Next.js
 - TypeScript
+- Tailwind
 - CSS Modules
-- Axios
-- Zustand
+- TanStackQuery
+- Redux toolkit
 
 ### ✅ Backend
-- Next.js API Routes (Monolithic architecture)
+- Next.js API Routes 
 - Prisma ORM
 - PostgreSQL
 - REST API
