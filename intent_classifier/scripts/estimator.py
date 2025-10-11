@@ -5,9 +5,9 @@ import numpy as np
 import sys, os
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 from app.core.intent_responses import intent_info
-from app.core.config import MODEL_PATH, CONF_THRESHOLD
+from app.core.config import MODEL_PATH, CONF_THRESHOLD, MAX_MSG
 
-MAX_MSG = 100
+
 
 def get_intent(text="Hi"):
     

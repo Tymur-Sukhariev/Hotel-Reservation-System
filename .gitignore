@@ -1,0 +1,62 @@
+# --- OS / Editors ---
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+
+# --- Local env files ---
+# Ignore all envs but keep a template
+.env
+.env*.local
+**/.env
+**/.env*.local
+!.env.example
+!**/.env.example
+
+# --- Node / Next.js (hrs) ---
+node_modules/
+.pnp/
+.pnp.js
+coverage/
+.next/
+out/
+next-env.d.ts
+build/
+dist/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-debug.log*
+.vercel/
+*.tsbuildinfo
+
+# --- Prisma / SQLite (if used) ---
+prisma/db.sqlite
+prisma/db.sqlite-journal
+db.sqlite
+
+# --- Python (intent_classifier) ---
+__pycache__/
+*.py[cod]
+*.pyo
+*.so
+.venv/
+venv/
+ENV/
+.ipynb_checkpoints
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# --- ML artifacts / data (tune as needed) ---
+*.joblib
+*.pkl
+*.pt
+*.h5
+data_for_training/
+
+# --- Keys / certs ---
+*.pem

@@ -1,5 +1,4 @@
 import argparse
-import sys
 import pandas as pd
 import numpy as np
 
@@ -19,6 +18,8 @@ from scripts.save_estimator import save_estimator
 from app.core.config import DATA_DIR 
 from app.utils.preprocess import preprocess
 
+import sys
+
 def load_dataset(csv_path: str):
     df = pd.read_csv(csv_path, encoding="utf-8-sig").dropna().drop_duplicates()
 
@@ -26,13 +27,13 @@ def load_dataset(csv_path: str):
     y = le.fit_transform(df["intent"])
     X = df["text"].astype(str).values
     labels = list(le.classes_)
-    return df, X, y, le, labels
+    return X, y, le, labels
 
 
 def split_data(X, y, test_size=0.2, seed=42):
     return train_test_split(X, y, test_size=test_size, random_state=seed, stratify=y)
 
-
+# TF-IDF vectorizer: normalizes text, lowercases, and tokenizes words.
 def make_vectorizer():
     return TfidfVectorizer(
         strip_accents="unicode",
@@ -125,7 +126,7 @@ def run_grid_search(name, pipe, param_grid, X_train, y_train, cv_folds=5, n_jobs
 
 def main():
     DATA_PATH = DATA_DIR / 'intents.csv'
-    
+
     ap = argparse.ArgumentParser()
     ap.add_argument("--csv", default=DATA_PATH)
     ap.add_argument("--cv", type=int, default=5)
@@ -134,6 +135,7 @@ def main():
     args = ap.parse_args()
 
     X, y, le, labels = load_dataset(args.csv)
+
     X_train, X_test, y_train, y_test = split_data(X, y, test_size=0.2, seed=42)
 
     tfidf = make_vectorizer()
@@ -141,7 +143,8 @@ def main():
     pipelines = build_pipelines(tfidf, estimators)
 
     grids = build_param_grids()
-
+    
+    # Train and evaluate all pipelines using grid search; select the best model based on cross-validation score.
     best_name, best_gs, best_cv_score, best_holdout = None, None, -1.0, -1.0
 
     for name, pipe in pipelines.items():
@@ -151,10 +154,19 @@ def main():
             cv_folds=args.cv, n_jobs=args.n_jobs, verbose=args.verbose
         )
 
-        holdout_f1 = evaluate_on_holdout(name, gs.best_estimator_, X_test, y_test, labels)
+        holdout_f1 = evaluate_on_holdout(
+            name, 
+            gs.best_estimator_, 
+            X_test, 
+            y_test, 
+            labels
+        )
 
         if gs.best_score_ > best_cv_score:
-            best_name, best_gs, best_cv_score, best_holdout = name, gs, gs.best_score_, holdout_f1
+            best_name = name
+            best_gs = gs
+            best_cv_score = gs.best_score_
+            best_holdout = holdout_f1
 
     print(f"\n=== Overall best by CV macro F1: {best_name} (CV={best_cv_score:.4f}, Holdout={best_holdout:.4f}) ===")
 

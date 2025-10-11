@@ -1,82 +1,85 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-.allContainer{
+.allContainer {
     max-width: 1500px;
     margin: 0 auto;
     margin-bottom: 200px;
 }
 
-.allContainer>p{
+.allContainer>p {
     width: 73%;
     margin-top: 40px;
-    font-size: 18px;
-    letter-spacing: 10%;
+    font-size: 16px;
+    letter-spacing: 7%;
     color: #4B4B4B;
     font-family: "Inter", sans-serif;
 }
 
-.allContainer>h1{
+.allContainer>h1 {
     letter-spacing: 14%;
     font-size: 34px;
     color: #948D72;
     margin: 30px 0;
 }
 
-.main{
+.main {
     display: flex;
     justify-content: space-between;
 }
 
-.main>div:nth-child(1){
+.main>div:nth-child(1) {
     width: 73%;
 }
-.main>div:nth-child(2){
+
+.main>div:nth-child(2) {
     width: 25%;
 }
 
-.bigImg{
+.bigImg {
     overflow: hidden;
     width: 100%;
-    height: 450px;
+    height: 550px;
+    position: relative;
 }
 
-.bigImg img{
-    width: 100%; 
+.bigImg img {
+    width: 100%;
     height: 100%;
-    object-fit: cover; 
-    object-position: center; 
+    object-fit: cover;
+    object-position: center;
     border-radius: 8px;
 }
 
-.smallImgContainer{
+.smallImgContainer {
     margin-top: 10px;
     display: flex;
     justify-content: space-between;
 }
 
-.eachSmallContainer{
+.eachSmallContainer {
     width: 32.5%;
     overflow: hidden;
     height: 170px;
     border-radius: 8px;
+    position: relative;
 }
 
-.smallImgContainer img{
+.smallImgContainer img {
     width: 100%;
-    object-fit: cover; 
-    object-position: center; 
+    object-fit: cover;
+    object-position: center;
 }
 
-.allFacilities{
+.allFacilities {
     height: 450px;
     border-radius: 8px;
     padding: 16px 20px 0;
-    -webkit-box-shadow: 0px 2px 24px 1px rgba(0,0,0,0.25);
-    -moz-box-shadow: 0px 2px 24px 1px rgba(0,0,0,0.25);
-    box-shadow: 0px 2px 24px 1px rgba(0,0,0,0.25);  
+    -webkit-box-shadow: 0px 2px 24px 1px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 2px 24px 1px rgba(0, 0, 0, 0.25);
+    box-shadow: 0px 2px 24px 1px rgba(0, 0, 0, 0.25);
 }
 
-.allFacilities h1{
+.allFacilities h1 {
     font-size: 32px;
     text-align: center;
     color: #948D72;
@@ -85,17 +88,17 @@
     margin-bottom: 7px;
 }
 
-.allFacilities p{
+.allFacilities p {
     font-size: 14px;
     margin-bottom: 4px;
 }
 
-.allFacilities img{
+.allFacilities img {
     width: 19px;
     height: 19px;
 }
 
-.bookContainer{
+.bookContainer {
     height: 170px;
     margin-top: 10px;
     position: relative;
@@ -104,7 +107,7 @@
     justify-content: center;
 }
 
-.bookContainer h1{
+.bookContainer h1 {
     font-size: 32px;
     color: #948D72;
     font-family: 'Inter', sans-serif;
@@ -114,7 +117,7 @@
 }
 
 
-.bookContainer button{
+.bookContainer button {
     width: 100%;
     height: 46px;
     color: white;
@@ -124,7 +127,7 @@
     bottom: 0;
 }
 
-.bookContainer button:hover{
+.bookContainer button:hover {
     background: #6e6c6c;
     transition: 0.2s;
 }

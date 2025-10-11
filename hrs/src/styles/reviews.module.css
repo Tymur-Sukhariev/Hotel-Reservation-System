@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-.reviewsContainer{
+.reviewsContainer {
     min-height: 100vh;
     width: 60%;
     margin: 0 auto;
-    padding-top: 50px;
+    padding-top: 140px;
     max-width: 900px;
+
 }
 
-.reviewsContainer>button{
+.reviewsContainer>button {
     color: #7A7A7A;
     font-size: 16px;
     font-family: "Inter", sans-serif;
@@ -16,7 +17,7 @@
     margin-top: 15px;
 }
 
-.reviewsContainer h1{
+.reviewsContainer h1 {
     text-align: center;
     font-size: 33px;
     color: #948D72;
@@ -25,19 +26,19 @@
     margin-bottom: 5px;
 }
 
-.openComment{
+.openComment {
     position: relative;
     margin-top: 5px;
     padding-bottom: 45px;
     padding-top: 35px;
 }
 
-.openComment textarea{
+.openComment textarea {
     width: 100%;
     resize: none;
-    -webkit-box-shadow: 0px 1px 7px -3px rgba(0,0,0,0.75);
-    -moz-box-shadow: 0px 1px 7px -3px rgba(0,0,0,0.75);
-    box-shadow: 0px 1px 7px -3px rgba(0,0,0,0.75);
+    -webkit-box-shadow: 0px 1px 7px -3px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 1px 7px -3px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 1px 7px -3px rgba(0, 0, 0, 0.75);
     padding: 10px;
     border-radius: 12px;
     height: 100px;
@@ -46,24 +47,24 @@
     font-size: 16px;
     font-family: "Inter", sans-serif;
     font-weight: 300;
-}   
+}
 
 /* cross */
-.openComment>img{
+.openComment>img {
     position: absolute;
     top: 6px;
     right: 5px;
     cursor: pointer;
 }
 
-.actionsContainer{
+.actionsContainer {
     position: absolute;
     bottom: 0;
     right: 0;
     display: flex;
 }
 
-.actionsContainer button{
+.actionsContainer button {
     border-radius: 8px;
     font-size: 20px;
     width: 115px;
@@ -73,36 +74,35 @@
     margin-left: 15px;
 }
 
-.actionsContainer button:hover{
+.actionsContainer button:hover {
     transition: 0.2s all;
     background: #606060;
 }
 
-.starMenu{
+.starMenu {
     padding-top: 5px;
     display: flex;
 }
 
-.starMenu img{
+.starMenu img {
     margin-right: 5px;
     cursor: pointer;
 }
 
-.ratingBox{
+.ratingBox {
     display: flex;
     width: fit-content;
     margin: 30px auto 0;
 }
 
-.ratingBox img{
+.ratingBox img {
     width: 27px;
     height: 27px;
     margin-top: 4px;
 }
 
-.ratingBox h3{
+.ratingBox h3 {
     color: #6D6C6C;
     font-size: 27px;
     letter-spacing: 14%;
 }
-

@@ -1,10 +1,15 @@
 from pathlib import Path
+import os
+from dotenv import load_dotenv
 
+# Project root - intent_classifier
+BASE_DIR = Path(__file__).resolve().parent.parent.parent
 
-BASE_DIR = Path(__file__).resolve().parent.parent.parent #/Users/timur_sukhariev/Desktop/intent_classifier
-DATA_DIR = BASE_DIR / "data_for_training"
-MODEL_PATH = BASE_DIR / "best_model.joblib"
+# Load .env from project root
+load_dotenv(BASE_DIR / ".env")
 
-
-CONF_THRESHOLD = 0.6  
-
+# Settings (relative to BASE_DIR unless absolute given)
+MODEL_PATH = BASE_DIR / os.getenv("MODEL_PATH", "best_model.joblib")
+DATA_DIR = BASE_DIR / os.getenv("DATA_DIR", "data_for_training")
+CONF_THRESHOLD = float(os.getenv("CONF_THRESHOLD", "0.6"))
+MAX_MSG = 100

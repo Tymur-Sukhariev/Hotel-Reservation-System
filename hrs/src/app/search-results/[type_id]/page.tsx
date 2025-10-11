@@ -11,8 +11,8 @@ import { cookies } from "next/headers";
 type PageProps = {
     params: Promise<Record<string, string>>
     searchParams: Promise<Record<string, string>>;
-  }
-export default async function DetailedPage({params, searchParams}: PageProps){
+}
+export default async function DetailedPage({ params, searchParams }: PageProps) {
 
     const myParams = await params;
     const typeId = +(decodeURI(myParams.type_id ?? '0').trim());
@@ -24,11 +24,11 @@ export default async function DetailedPage({params, searchParams}: PageProps){
     const isTV = search?.tv === 'true' || false;
     const isAC = search?.ac === 'true' || false;
     const isBath = search?.bath === 'true' || false;
-    const facilitiesContainer = {isAC, isBath, isTV}
+    const facilitiesContainer = { isAC, isBath, isTV }
 
     const result = await getRoomDetails({
         typeId,
-        facilities: { 
+        facilities: {
             tv: isTV,
             ac: isAC,
             bath: isBath
@@ -37,7 +37,7 @@ export default async function DetailedPage({params, searchParams}: PageProps){
         checkOut
     })
     console.log(result);
-    
+
 
     const finalPrice = getPrice(checkIn, checkOut, result.price, children);
 
@@ -45,19 +45,19 @@ export default async function DetailedPage({params, searchParams}: PageProps){
         "use server"
 
         const session = await getSession();
-        if(!session)await logoutUser();
-        
+        if (!session) await logoutUser();
+
         try {
-          await handleBooking({
-            userId: session!.userId,
-            typeId,
-            facilities: { isTV, isAC, isBath },
-            checkIn,
-            checkOut,
-            totalPrice: finalPrice
-          });
-          (await cookies()).set('booking_success', 'true', { maxAge: 5 })
-        } 
+            await handleBooking({
+                userId: session!.userId,
+                typeId,
+                facilities: { isTV, isAC, isBath },
+                checkIn,
+                checkOut,
+                totalPrice: finalPrice
+            });
+            (await cookies()).set('booking_success', 'true', { maxAge: 5 })
+        }
         catch (error) {
             console.log(error);
             return
@@ -65,38 +65,43 @@ export default async function DetailedPage({params, searchParams}: PageProps){
         redirect('/');
     }
 
-    return(
+    return (
         <form action={handleBook} className={styles.allContainer}>
-                <h1>{result.type} {result.comfort}</h1>
-                <div className={styles.main}>
-                    <div>
-                        <div className={styles.bigImg}>
-                            <Image width={500} height={300} src={`/images/rooms/${result.images[0]}`} alt="roomImg"/>
-                        </div>
-                        <div className={styles.smallImgContainer}>
-                            {result.images
+            <h1>{result.type} {result.comfort}</h1>
+            <div className={styles.main}>
+                <div>
+                    <div className={styles.bigImg}>
+                        <Image
+                            src={`/images/rooms/${result.images[0]}`}
+                            alt="room"
+                            fill
+                            priority
+                        />
+                    </div>
+                    <div className={styles.smallImgContainer}>
+                        {result.images
                             .filter((_, index) => index !== 0)
-                            .map((image, index)=>(
+                            .map((image, index) => (
                                 <div key={index} className={styles.eachSmallContainer}>
-                                    <Image width={100} height={50} src={`/images/rooms/${image}`} alt="roomImg"/>
+                                    <Image src={`/images/rooms/${image}`} alt="roomImg" fill />
                                 </div>)
                             )}
-                        </div>
-                    </div>
-
-                    <div>
-                        <div className={styles.allFacilities}>
-                            <AllFacilities {...facilitiesContainer}/>             
-                        </div>
-                        <div className={styles.bookContainer}>
-                            <h1>Total: {finalPrice}€</h1>
-                            {result.isAvailable&&<button type="submit">BOOK</button>}
-                            {!result.isAvailable&&<button disabled className='pointer-events-none'>UNAVAILABLE NOW</button>}
-                            
-                        </div>  
                     </div>
                 </div>
-                <p>{result.description}</p>
+
+                <div>
+                    <div className={styles.allFacilities}>
+                        <AllFacilities {...facilitiesContainer} />
+                    </div>
+                    <div className={styles.bookContainer}>
+                        <h1>Total: {finalPrice}€</h1>
+                        {result.isAvailable && <button type="submit">BOOK</button>}
+                        {!result.isAvailable && <button disabled className='pointer-events-none'>UNAVAILABLE NOW</button>}
+
+                    </div>
+                </div>
+            </div>
+            <p>{result.description}</p>
         </form>
     )
 }

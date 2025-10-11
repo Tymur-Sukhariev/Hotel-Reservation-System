@@ -20,7 +20,7 @@ export type BookingResponse = {
 };
 
 export class MyBookingsService {
-    
+
   public async getBookings({ userId, bookingNumber }: QueryType): Promise<BookingResponse[]> {
 
     const where: Prisma.BookingsWhereInput = {};
@@ -31,13 +31,13 @@ export class MyBookingsService {
     const isBeforeCheckout = ltTime.getHours() < 12;
     const todayNoon = new Date(ltTime);
     todayNoon.setHours(12, 0, 0, 0);
-    where.OR = [{checkOut: {gt: ltTime}}];
+    where.OR = [{ checkOut: { gt: ltTime } }];
 
     if (isBeforeCheckout) {
       where.OR.push({
         checkOut: {
-          gte: new Date(ltTime.setHours(0, 0, 0, 0)), 
-          lt: todayNoon 
+          gte: new Date(ltTime.setHours(0, 0, 0, 0)),
+          lt: todayNoon
         }
       });
     }
@@ -96,7 +96,7 @@ export class MyBookingsService {
     }));
   }
 
-  public async cancelBooking(bookingNumber: number){
-    await db.bookings.delete({where: {bookingNumber}})
+  public async cancelBooking(bookingNumber: number) {
+    await db.bookings.delete({ where: { bookingNumber } })
   }
 }
