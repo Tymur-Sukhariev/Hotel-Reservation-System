@@ -116,6 +116,7 @@ A standard **80/20 train-test split** was used for evaluation, and model perform
 - Prisma ORM
 - PostgreSQL
 - REST API
+- Python
 
 ### ✅ Machine Learning
 - Python
