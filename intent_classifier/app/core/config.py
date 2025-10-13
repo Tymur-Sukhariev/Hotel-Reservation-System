@@ -13,3 +13,5 @@ MODEL_PATH = BASE_DIR / os.getenv("MODEL_PATH", "best_model.joblib")
 DATA_DIR = BASE_DIR / os.getenv("DATA_DIR", "data_for_training")
 CONF_THRESHOLD = float(os.getenv("CONF_THRESHOLD", "0.6"))
 MAX_MSG = 100
+
+
