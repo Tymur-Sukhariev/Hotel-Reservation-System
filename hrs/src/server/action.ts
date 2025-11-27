@@ -112,6 +112,8 @@ export const roomSearchAction = async (
     selectedRoomType?: string | null;
   }
 ) => {
+  console.log(await searchRooms(checkIn, checkOut, guests, filters));
+
   return await searchRooms(checkIn, checkOut, guests, filters);
 };
 

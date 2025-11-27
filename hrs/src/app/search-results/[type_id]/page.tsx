@@ -36,7 +36,7 @@ export default async function DetailedPage({ params, searchParams }: PageProps) 
         checkIn,
         checkOut
     })
-    console.log(result);
+    // console.log("ROOM info", result);
 
 
     const finalPrice = getPrice(checkIn, checkOut, result.price, children);

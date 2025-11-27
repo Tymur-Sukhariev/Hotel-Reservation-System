@@ -135,6 +135,7 @@ def main():
     args = ap.parse_args()
 
     X, y, le, labels = load_dataset(args.csv)
+    
 
     X_train, X_test, y_train, y_test = split_data(X, y, test_size=0.2, seed=42)
 

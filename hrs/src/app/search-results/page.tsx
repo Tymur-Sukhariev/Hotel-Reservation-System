@@ -4,8 +4,11 @@ type PageProps = {
   searchParams: Promise<Record<string, string>>;
 }
 
+export function calculateTotalGuests(adults: number, childrenAges: number[]) {
+  return adults + childrenAges.filter(age => age > 2).length;
+}
 
-export default async function  SearchResults ({searchParams}: PageProps)  {
+export default async function SearchResults({ searchParams }: PageProps) {
 
   const search = await searchParams;
   const checkIn = search?.checkin ?? ""
@@ -13,15 +16,16 @@ export default async function  SearchResults ({searchParams}: PageProps)  {
   const adults: number = +(search?.adults || 0);
   const childrenAges = search?.childrenAges?.split(',').filter(Boolean).map(Number) ?? [];
   const children = childrenAges?.length;
-  const totalGuests = adults + childrenAges.filter(age => age > 2).length;
+  const totalGuests = calculateTotalGuests(adults, childrenAges)
+
 
   return (
-      <SearchResultsClient 
-        checkIn={checkIn}
-        checkOut={checkOut}
-        totalGuests={totalGuests}
-        adults={adults}
-        children={children}
-      />
+    <SearchResultsClient
+      checkIn={checkIn}
+      checkOut={checkOut}
+      totalGuests={totalGuests}
+      adults={adults}
+      children={children}
+    />
   );
 };
