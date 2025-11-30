@@ -23,3 +23,5 @@ def classify_intent(text: str) -> tuple[str, float]:
     label = le.inverse_transform([top_idx])[0]
     conf = float(probs[top_idx])
     return label, conf
+
+# print(classify_intent("hey"))

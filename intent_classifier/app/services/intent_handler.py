@@ -11,16 +11,34 @@ from scripts.booking_sequential import QUESTION
 from scripts.estimator import classify_intent
 from app.services.booking_bootstrap import start_booking_session
 
+
+RAG_INTENTS = [
+    "amenities_info",
+    "parking_info",
+    "checkin_checkout_time",
+    "location_directions",
+    "pets_policy",
+    "cancellation_policy",
+    "restaurant_info",
+    "room_rates"
+]
+
+
 def handle_intent(text: str) -> BotReply:
     clean_msg = len(text.strip())
+    
     if clean_msg == 0:
         raise HTTPException(status_code=400, detail="Message cannot be empty")
     if clean_msg > MAX_MSG:
         raise HTTPException(status_code=400, detail=f"Max characters: {MAX_MSG}")
 
     label, conf = classify_intent(text)
+    
     if conf < CONF_THRESHOLD:
-        label = "fallback"
+        return BotReply(reply=intent_info["fallback"], handoff=None)
+    
+    if label in ["greeting", "goodbye"]:
+        return BotReply(reply=intent_info[label], handoff=None)
 
     if label == "booking":
         session_id, slots, pending = start_booking_session(text)
@@ -63,14 +81,17 @@ def handle_intent(text: str) -> BotReply:
             reply="Okay — I’ll help cancel your reservation. Please provide your booking number.",
             handoff=Handoff(route="/booking-cancel/chat", session_id=session_id),
         )
-
         
+    # if label in RAG_INTENTS:
+        # rag = generate_answer(text)
+        # return BotReply(
+        #     reply=rag["answer"],
+        #     citations=rag["citations"],
+        #     handoff=None
+        # )
 
-    # 4) Default: plain reply (no handoff)
-    base = intent_info.get(label)
-    if isinstance(base, dict):
-        reply_text = base.get("reply") or base.get("message") or str(base)
-    else:
-        reply_text = str(base) if base is not None else f"Intent: {label}"
 
-    return BotReply(reply=reply_text, handoff=None)
+    return BotReply(reply=intent_info["fallback"], handoff=None)
+    
+    
+

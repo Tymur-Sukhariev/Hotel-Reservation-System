@@ -1,0 +1,75 @@
+# Room Rates and Pricing Information
+
+You are welcome to use the main page with custom filters to view all current room prices. The pricing displayed there is always up to date, as it is taken directly from the hotel's booking system. Also you can easily look at suitable options by asking here in a chat, and if you like the option it is possible to book it right with the help of this chatbot.
+
+This document explains how our pricing works, what affects the final rate, and how different room types compare to one another.
+
+## How to Check Current Prices
+
+You can check room prices either on the main booking page or directly through our chat. In both places, prices are taken from the same live system, so they are always up to date.
+
+To check prices through the booking page:
+- Select your check in and check out dates.
+- Choose the number of guests.
+- Apply any filters such as room type or comfort level.
+- The system will automatically show all available rooms with their exact prices.
+
+If you prefer, you can also ask in the chat. Just tell us your dates and number of guests, and the bot will show you the available rooms and their prices. You can even complete the entire booking directly through the chat if that is more convenient for you.
+
+This ensures you always see accurate rates, including daily updates, discounts, or seasonal changes.
+
+
+## Room Types and Comfort Levels
+
+Our hotel offers several room types:
+- **Single** — suitable for one guest, available as Standard or Comfort.
+- **Double** — one double bed, Standard or Comfort.
+- **Double Twin** — two separate beds, Standard or Comfort.
+- **Triple Twin** — three separate beds, Standard or Comfort.
+- **Triple Double Twin** — combination sleeping arrangements for families or small groups.
+- **Family** — larger space for group or family stays up to 4 people, Standard or Comfort.
+
+Each room type can come in two comfort categories:
+- **Standard** — functional furnishing, essential equipment, practical space.
+- **Comfort** — upgraded bedding, larger TV, better lighting, AC control, and more spacious bathrooms when available.
+
+Comfort rooms generally cost more than Standard rooms of the same type.
+
+## How Pricing Works
+
+Room rates vary depending on several factors:
+
+### 1. **Room Type**
+Larger rooms designed for more guests naturally have higher base prices. For example:
+- Single < Double < Triple < Family
+
+### 2. **Comfort Level**
+Comfort variants include upgraded amenities and therefore have a higher price than the Standard option for the same room type.
+
+### 3. **Season and Demand**
+Prices may change depending on:
+- Weekends vs weekdays
+- Holidays and city events
+- Hotel occupancy levels
+
+When demand is high, prices increase to reflect the booking situation.
+
+### 4. **Number of Guests**
+Some room types allow variable occupancy. The final price can adjust depending on how many people stay in the room.
+
+### 5. **Length of Stay**
+Occasionally, multi-night stays can activate discounts or lower daily rates. These adjustments appear automatically in the booking system.
+
+### 6. **Children Discount**
+There will be minus 5% of discount for each child. If two children, then 10% discount, etc. 
+
+## Typical Price Ranges
+
+While exact prices depend on dates and availability, here is a general idea:
+- Smaller rooms (like Single or Double) tend to fall in the lower price range.
+- Larger rooms (like Triple, Triple Twin, or Family) appear higher.
+- Comfort rooms usually cost slightly more than Standard.
+
+Your actual price will always be shown on the booking page after entering your stay details.
+
+If you need help understanding which room type fits your group or preferences, you can ask about room types — the staff can guide you in finding the best match before checking the rates.
