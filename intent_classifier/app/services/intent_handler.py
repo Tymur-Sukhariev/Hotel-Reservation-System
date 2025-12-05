@@ -7,6 +7,7 @@ from app.state.sessions import SESSIONS
 from app.core.config import CONF_THRESHOLD, MAX_MSG
 from app.core.intent_responses import intent_info
 from app.services.cancellation_bootstrap import extract_booking_number
+from app.rag.answerer import generate_answer
 from scripts.booking_sequential import QUESTION
 from scripts.estimator import classify_intent
 from app.services.booking_bootstrap import start_booking_session
@@ -82,13 +83,13 @@ def handle_intent(text: str) -> BotReply:
             handoff=Handoff(route="/booking-cancel/chat", session_id=session_id),
         )
         
-    # if label in RAG_INTENTS:
-        # rag = generate_answer(text)
-        # return BotReply(
-        #     reply=rag["answer"],
-        #     citations=rag["citations"],
-        #     handoff=None
-        # )
+    if label in RAG_INTENTS:
+        rag = generate_answer(text, label)
+        return BotReply(
+            reply=rag["answer"],
+            citations=rag["citations"],
+            handoff=None
+        )
 
 
     return BotReply(reply=intent_info["fallback"], handoff=None)

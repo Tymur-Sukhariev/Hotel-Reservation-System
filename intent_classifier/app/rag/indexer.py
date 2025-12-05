@@ -93,6 +93,7 @@ def build_index():
         for chunk in chunks:
             metadata.append({"source": filename})
             all_chunks.append(chunk)
+            print("CHUUNK",chunk)
 
     print(f"Created {len(all_chunks)} total chunks.")
 

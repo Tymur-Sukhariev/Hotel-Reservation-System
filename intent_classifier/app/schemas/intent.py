@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import Any, Dict, Optional, Literal
+from typing import Any, Dict, List, Optional, Literal
 
 class IntentRequest(BaseModel):
     text: str
@@ -21,6 +21,7 @@ class BotReply(BaseModel):
     slots: Optional[Dict[str, Any]] = None
     selected_index: Optional[int] = None
     booking_number: Optional[int] = None
+    citations: Optional[List[Dict[str, Any]]] = None
 
 class BookingChatRequest(BaseModel):
     session_id: str

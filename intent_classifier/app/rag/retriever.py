@@ -95,7 +95,7 @@ class RAGRetriever:
         results = []
         for rank, local_idx in enumerate(subset_idx[0]):
             real_idx = filtered_indices[local_idx]
-            results.append((self.chunks[real_idx], float(distances[0][rank])))
+            results.append((self.chunks[real_idx], float(distances[0][rank]), real_idx))
 
         return results
 

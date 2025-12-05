@@ -30,11 +30,18 @@ type Handoff = {
     session_id: string;
 } | null;
 
+type Citation = {
+    chunk_id: number;
+    source: string;
+    score?: number;
+};
+
 type BotReply = {
     reply: string;
     handoff: Handoff;
     slots?: Slots | null;
     selected_index?: number | null;
+    citations?: Citation[] | null;
 };
 
 export type RoomOption = {

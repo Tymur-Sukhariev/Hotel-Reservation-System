@@ -14,3 +14,5 @@ DATA_DIR = BASE_DIR / os.getenv("DATA_DIR", "data_for_training")
 CONF_THRESHOLD = float(os.getenv("CONF_THRESHOLD", "0.6"))
 MAX_MSG = 100
 
+GROQ_API_KEY = os.getenv("GROQ_API_KEY")
+print(GROQ_API_KEY)
